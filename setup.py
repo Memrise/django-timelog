@@ -12,7 +12,7 @@ setup(
     package_dir = {'':'src'},
     license = "MIT License",
     keywords = "django",
-    description = "Performance logging middlware and analysis tools for Django",
+    description = "Performance logging middleware and analysis tools for Django",
     install_requires=[
         'texttable',
         'progressbar',
