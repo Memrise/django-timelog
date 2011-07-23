@@ -1,4 +1,5 @@
 import fileinput
+import os
 from re import compile
 from django.conf import settings
 
@@ -66,6 +67,10 @@ def analyze_log_file(logfile, pattern, reverse_paths=True, progress=True):
         counter = 0
 
     data = {}
+    
+    # if it doesn't exist, touch it so it'll be there next time
+    if not os.path.exists(logfile):
+        open(logfile,'w').write('')
 
     compiled_pattern = compile(pattern)
     for line in fileinput.input([logfile]):
